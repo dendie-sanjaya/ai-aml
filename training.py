@@ -50,7 +50,7 @@ print(f"Shape of processed training data: {X_train_processed.shape}")
 model = IsolationForest(
     n_estimators=100,      # Number of base estimators (trees)
     max_samples='auto',    # Number of samples to draw from X to train each base estimator
-    contamination=0.02,    # Expected proportion of outliers in the data
+    contamination=0.005,    # Expected proportion of outliers in the data
     random_state=42,       # For reproducibility
     n_jobs=-1              # Use all available CPU cores
 )

@@ -49,6 +49,11 @@ else:
     print("Please ensure you have run the data generation and model training scripts first.")
     # In a production environment, you might want to raise an error or prevent the app from starting.
 
+# --- CUSTOM AML RISK THRESHOLD ---
+# This threshold determines when a transaction is flagged as 'is_money_laundering: true'
+# A value of 0.3 means if aml_risk_probability is > 0.3, it's flagged as true.
+CUSTOM_AML_RISK_THRESHOLD = 0.3
+
 
 @app.route('/predict_aml', methods=['POST'])
 def predict_aml_api():
@@ -86,8 +91,8 @@ def predict_aml_api():
         risk_probability = (0.5 - clamped_score) / 1.0 # Simple linear scaling
         risk_probability = np.clip(risk_probability, 0.0, 1.0) # Ensure between 0 and 1
 
-        # Determine if it's considered money laundering based on a threshold
-        is_money_laundering = 1 if anomaly_score < model.offset_ else 0
+        # Determine if it's considered money laundering based on the CUSTOM_AML_RISK_THRESHOLD
+        is_money_laundering = 1 if risk_probability > CUSTOM_AML_RISK_THRESHOLD else 0
 
         # --- Generate Explanation ---
         # Initialize explanation based on the prediction
