@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "77ead34a-cf3a-40bf-9645-db0640a0edec",
+		"name": "AI - Anti Money Laundry",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11442516",
+		"_collection_link": "https://praisindo-smtp4dev.postman.co/workspace/AI-MI-LLM-Server~9ace1ec3-2091-480a-8ba6-eab63c0ca6ac/collection/11442516-77ead34a-cf3a-40bf-9645-db0640a0edec?action=share&source=collection_link&creator=11442516"
+	},
+	"item": [
+		{
+			"name": "API Check Transaction AML - Negatif Money Laudry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transaction_id\": \"TXN00003\",\r\n    \"sender_account_type\": \"Personal\",\r\n    \"receiver_account_type\": \"Business\",\r\n    \"transaction_amount_usd\": 850000.50,\r\n    \"transaction_frequency_30d\": 120,\r\n    \"avg_daily_balance_30d\": 800000.00,\r\n    \"is_international\": 0,\r\n    \"transaction_hour\": 14,\r\n    \"ip_country_match\": 1,\r\n    \"num_flagged_transactions_sender_90d\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/predict_aml",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"predict_aml"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Check Transaction AML - Positif Money Laudry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"transaction_id\": \"TXN_HIGH_RISK_002\",\r\n    \"sender_account_type\": \"Business\",\r\n    \"receiver_account_type\": \"Personal\",\r\n    \"transaction_amount_usd\": 1500000.00,  \r\n    \"transaction_frequency_30d\": 1,       \r\n    \"avg_daily_balance_30d\": 5000.00,     \r\n    \"is_international\": 1,\r\n    \"transaction_hour\": 23,               \r\n    \"ip_country_match\": 0,                \r\n    \"num_flagged_transactions_sender_90d\": 1 \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/predict_aml",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"predict_aml"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
