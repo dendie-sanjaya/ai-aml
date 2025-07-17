@@ -120,4 +120,6 @@ Here's a visual representation of the Postman Collection file that contains the 
 
 ![Screen Shoot Chatbot](./ss/positif-aml.jpg)
 
-Download Postmannt Collection -> ![Postmant Collection](./AI - Anti Money Laundry.postman_collection.json)
+**4.3 Download Postmant**
+
+Download Postmant Collection -> ![Postmant Collection](./'AI - Anti Money Laundry.postman_collection.json')
