@@ -112,11 +112,11 @@ This screenshot displays an example of testing the /predict_aml API using Postma
 
 Here's a visual representation of the Postman Collection file that contains the API request details for testing. You can import this file into Postman to replicate the tests.
 
-**This is a transaction  not money laundering**
+**4.1 This is a transaction  not money laundering**
 
 ![Screen Shoot Chatbot](./ss/negatif-aml.jpg)
 
-**This is a transaction suspected  of money laundering**
+**4.2 This is a transaction suspected  of money laundering**
 
 ![Screen Shoot Chatbot](./ss/positif-aml.jpg)
 
