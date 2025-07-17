@@ -26,7 +26,9 @@ This story begins with data. Every transaction — whether it's a bank transfer,
 
 This raw data, spread across various systems like SQL Databases and Data Warehouses, is collected and processed through an ETL (Extract, Transform, Load) process. 
 
-This ETL process ensures that all relevant data is prepared and cleaned, then brought together in a neat format, like the aml_training_data.csv file you created.
+This ETL process ensures that all relevant data is prepared and cleaned, then brought together in a neat format, like the **aml_training_data.csv** file you created.
+
+![Data Training](./ss/data-training.jpg)
 
 This aml_training_data.csv file becomes the "textbook" for our AI detective. It contains 10 important variables that define each transaction:
     
